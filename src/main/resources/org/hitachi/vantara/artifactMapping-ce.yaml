@@ -1,0 +1,78 @@
+artifactsMappings:
+  data-access-plugin:
+    artifactPattern: 'data-access-plugin-${VERSION}.zip'
+    replaceObjects:
+      'data-access':
+        - './server/pentaho-server/pentaho-solutions/system/data-access'
+    type: ZIP
+    restart:
+     - SERVER
+    clean:
+     - SERVER_KARAF_CACHE
+     - BROWSER_CACHE
+     - TOMCAT_TEMP
+     - TOMCAT_WORK
+     - SERVER_LOG
+
+  pentaho-user-console-package:
+    artifactPattern: 'pentaho-user-console-package-${VERSION}.zip'
+    replaceObjects:
+      'mantle':
+        - './server/pentaho-server/tomcat/webapps/pentaho/mantle'
+      'WEB-INF':
+        - './server/pentaho-server/tomcat/webapps/pentaho/WEB-INF/deploy/mantle'
+    type: ZIP
+    restart:
+      - SERVER
+    clean:
+      - BROWSER_CACHE
+      - TOMCAT_TEMP
+      - TOMCAT_WORK
+      - SERVER_LOG
+
+  pentaho-big-data-kettle-plugins-hive:
+    artifactPattern: 'pentaho-big-data-kettle-plugins-hive.jar'
+    type: JAR
+    replaceObjects:
+      'pentaho-big-data-kettle-plugins-hive.jar':
+        - './server/pentaho-server/pentaho-solutions/system/karaf/system/pentaho/pentaho-big-data-kettle-plugins-hive/${VERSION}/pentaho-big-data-kettle-plugins-hive-${VERSION}.jar'
+        - './design-tools/data-integration/system/karaf/system/pentaho/pentaho-big-data-kettle-plugins-hive/${VERSION}/pentaho-big-data-kettle-plugins-hive-${VERSION}.jar'
+        - './design-tools/metadata-editor/system/karaf/system/pentaho/pentaho-big-data-kettle-plugins-hive/${VERSION}/pentaho-big-data-kettle-plugins-hive-${VERSION}.jar'
+        - './design-tools/report-designer/system/karaf/system/pentaho/pentaho-big-data-kettle-plugins-hive/${VERSION}/pentaho-big-data-kettle-plugins-hive-${VERSION}.jar'
+
+  pentaho-big-data-api-jdbc:
+    artifactPattern: 'pentaho-big-data-api-jdbc.jar'
+    type: JAR
+    replaceObjects:
+      'pentaho-big-data-api-jdbc.jar':
+        - './server/pentaho-server/pentaho-solutions/system/karaf/system/pentaho/pentaho-big-data-api-jdbc/${VERSION}/pentaho-big-data-api-jdbc-${VERSION}.jar'
+        - './design-tools/data-integration/system/karaf/system/pentaho/pentaho-big-data-api-jdbc/${VERSION}/pentaho-big-data-api-jdbc-${VERSION}.jar'
+        - './design-tools/metadata-editor/system/karaf/system/pentaho/pentaho-big-data-api-jdbc/${VERSION}/pentaho-big-data-api-jdbc-${VERSION}.jar'
+        - './design-tools/report-designer/system/karaf/system/pentaho/pentaho-big-data-api-jdbc/${VERSION}/pentaho-big-data-api-jdbc-${VERSION}.jar'
+
+  pentaho-big-data-plugin-samples:
+      artifactPattern: 'pentaho-big-data-plugin-samples-${VERSION}.zip'
+      type: ZIP
+
+  pentaho-big-data-assemblies-pmr-libraries:
+      artifactPattern: 'pentaho-big-data-assemblies-pmr-libraries-plugin.zip'
+      type: FILE
+      replaceObjects:
+        'pentaho-big-data-assemblies-pmr-libraries-plugin.zip':
+          - './server/pentaho-server/pentaho-solutions/system/kettle/plugins/pentaho-big-data-plugin/pentaho-mapreduce-libraries.zip'
+          - './design-tools/data-integration/plugins/pentaho-big-data-plugin/pentaho-mapreduce-libraries.zip'
+          - './design-tools/metadata-editor/plugins/pentaho-big-data-plugin/pentaho-mapreduce-libraries.zip'
+          - './design-tools/report-designer/plugins/pentaho-big-data-plugin/pentaho-mapreduce-libraries.zip'
+
+  pentaho-big-data-plugin-osgi:
+      artifactPattern: 'features.xml'
+      type: FILE
+      replaceObjects:
+        'processed/features.xml':
+        - './server/pentaho-server/pentaho-solutions/system/karaf/system/pentaho/pentaho-big-data-plugin-osgi/${VERSION}/pentaho-big-data-plugin-osgi-${VERSION}-features.xml'
+        - './design-tools/data-integration/system/karaf/system/pentaho/pentaho-big-data-plugin-osgi/${VERSION}/pentaho-big-data-plugin-osgi-${VERSION}-features.xml'
+        - './design-tools/metadata-editor/system/karaf/system/pentaho/pentaho-big-data-plugin-osgi/${VERSION}/pentaho-big-data-plugin-osgi-${VERSION}-features.xml'
+        - './design-tools/report-designer/system/karaf/system/pentaho/pentaho-big-data-plugin-osgi/${VERSION}/pentaho-big-data-plugin-osgi-${VERSION}-features.xml'
+
+
+
