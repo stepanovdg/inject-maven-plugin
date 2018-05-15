@@ -14,6 +14,10 @@ artifactsMappings:
      - TOMCAT_WORK
      - SERVER_LOG
 
+  pentaho-data-access-gwt:
+    artifactPattern: 'pentaho-data-access-gwt-${VERSION}.jar'
+    type: JAR
+
   pentaho-user-console-package:
     artifactPattern: 'pentaho-user-console-package-${VERSION}.zip'
     replaceObjects:
@@ -64,8 +68,7 @@ artifactsMappings:
           - './design-tools/metadata-editor/plugins/pentaho-big-data-plugin/pentaho-mapreduce-libraries.zip'
           - './design-tools/report-designer/plugins/pentaho-big-data-plugin/pentaho-mapreduce-libraries.zip'
 
-  pentaho-big-data-plugin-osgi:
-      artifactPattern: 'features.xml'
+  pentaho-big-data-plugin-osgi:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  artifactPattern: 'features.xml'
       type: FILE
       replaceObjects:
         'processed/features.xml':

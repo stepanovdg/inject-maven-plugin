@@ -92,6 +92,9 @@ public class SelectorBuilderFactory {
       try {
         boolean res = false;
         for ( ProjectMapping is : projectMappings ) {
+          if ( is == null ){
+            continue;
+          }
           res = builder.init( is );
           if ( res ) {
             break;

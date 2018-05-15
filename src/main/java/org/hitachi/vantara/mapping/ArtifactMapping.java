@@ -7,7 +7,7 @@ import java.util.Map;
  */
 public class ArtifactMapping {
   private String artifactPattern;
-  private Map<String,String[]> replaceObjects;
+  private Map<String, String[]> replaceObjects;
   private Type type;
   private Products[] restart;
   private Components[] clean;
